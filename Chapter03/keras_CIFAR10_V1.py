@@ -18,7 +18,8 @@ IMG_COLS = 32
 
 #constant
 BATCH_SIZE = 128
-NB_EPOCH = 40
+#NB_EPOCH = 40
+NB_EPOCH = 1
 NB_CLASSES = 10
 VERBOSE = 1
 VALIDATION_SPLIT = 0.2
@@ -116,8 +117,8 @@ model.save_weights('cifar10_weights.h5', overwrite=True)
 # list all data in history
 print(history.history.keys())
 # summarize history for accuracy
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
 plt.title('model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')

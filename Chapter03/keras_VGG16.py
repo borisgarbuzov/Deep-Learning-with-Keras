@@ -60,14 +60,15 @@ def VGG_16(weights_path=None):
     return model
 
 if __name__ == "__main__":
-    im = cv2.resize(cv2.imread('cat.jpg'), (224, 224)).astype(np.float32)
+    im = cv2.resize(cv2.imread('../Datasets/cat.jpg'), (224, 224)).astype(np.float32)
     im = im.transpose((2,0,1))
     im = np.expand_dims(im, axis=0)
-    K.set_image_dim_ordering("th")
+    #K.set_image_dim_ordering("th")
+    K.common.set_image_dim_ordering("th")
 
     # Test pretrained model
     model = VGG_16('/Users/gulli/Keras/codeBook/code/data/vgg16_weights.h5')
     optimizer = SGD()
     model.compile(optimizer=optimizer, loss='categorical_crossentropy')
     out = model.predict(im)
-    print np.argmax(out)
+    print(np.argmax(out))

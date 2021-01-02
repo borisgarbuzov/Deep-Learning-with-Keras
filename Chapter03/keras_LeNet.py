@@ -41,7 +41,7 @@ class LeNet:
 		return model
 
 # network and training
-NB_EPOCH = 20
+NB_EPOCH = 1
 BATCH_SIZE = 128
 VERBOSE = 1
 OPTIMIZER = Adam()
@@ -53,7 +53,8 @@ INPUT_SHAPE = (1, IMG_ROWS, IMG_COLS)
 
 # data: shuffled and split between train and test sets
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-K.set_image_dim_ordering("th")
+#K.set_image_dim_ordering("th")
+K.common.set_image_dim_ordering("th")
 
 # consider them as float and normalize
 X_train = X_train.astype('float32')
