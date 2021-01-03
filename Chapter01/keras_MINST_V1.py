@@ -21,6 +21,8 @@ VALIDATION_SPLIT=0.2 # how much TRAIN is reserved for VALIDATION
 #
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
+
+
 #X_train is 60000 rows of 28x28 values --> reshaped in 60000 x 784
 RESHAPED = 784
 #
